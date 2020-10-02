@@ -18,7 +18,7 @@ public class PaymentFactory {
 		return new IPaymentRate() {
 			@Override
 			public double pay(double salaryPerMonth) {
-				return 0;//todo 
+				return salaryPerMonth * 0.85;  // Reducció del 15% del sou mensual. 
 			}
 		};
 	}
