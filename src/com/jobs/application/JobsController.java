@@ -2,6 +2,8 @@ package com.jobs.application;
 
 import com.jobs.domain.AbsStaffMember;
 import com.jobs.domain.Employee;
+import com.jobs.domain.Manager;
+import com.jobs.domain.Volunteer;
 import com.jobs.persistence.EmployeeRepository;
 
 public class JobsController {
@@ -23,7 +25,8 @@ public class JobsController {
 	}
 
 	public void createManagerEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{
-		// TODO Auto-generated method stub
+		Manager manager = new Manager(name, address, phone,  salaryPerMonth, PaymentFactory.createPaymentRateManager());
+		repository.addMember(manager);
 		
 	}
 
@@ -53,9 +56,17 @@ public class JobsController {
 		return allEmployees;
 	}
 
-	public void createVolunteer(String string, String string2, String string3) {
-		// TODO Auto-generated method stub
-		
+	/**
+	 * Creates a Volunteer person and adds to the Employee repository.
+	 * 
+	 * @param name String name of the volunteer.
+	 * @param address Address of the volunteer.
+	 * @param phone Phone number of the volunteer.
+	 * @throws Exception Exception is thrown if the internal constructor method misses a description.
+	 */
+	public void createVolunteer(String name, String address, String phone) throws Exception {
+		Volunteer volunteer = new Volunteer(name, address, phone, "Voluntario que no cobra");
+		repository.addMember(volunteer);
 	}
 	
 	

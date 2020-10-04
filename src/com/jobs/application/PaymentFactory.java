@@ -40,4 +40,15 @@ public class PaymentFactory {
 	}
 	
 	
+	public static IPaymentRate createPaymentRateManager(){
+		return new IPaymentRate() {
+			@Override
+			public double pay(double salaryPerMonth) {
+				// Manager employees are paid their monthly salary with a 10% increment.
+				return salaryPerMonth * 1.1;   
+			}
+		};
+	}
+	
+	
 }
