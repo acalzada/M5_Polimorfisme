@@ -29,16 +29,28 @@ public class JobsController {
 
 
 	public void payAllEmployeers() {
+		
+		System.out.println("PAYING ALL THE EMPLOYEES:\n");
+		
 		for(AbsStaffMember staffMember: repository.getAllMembers())
 		{
 			staffMember.pay();
-			System.out.println(staffMember.getName() + " has been paid a total of " + staffMember.getTotalPaid());
+			System.out.println("\t- " + staffMember.getName() + " has been paid a total of " + staffMember.getTotalPaid());
 		}
+		
+		System.out.println("\n");
 	}
 
 	public String getAllEmployees() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String allEmployees = "\n";
+		
+		for(AbsStaffMember staffMember : repository.getAllMembers())
+		{
+			allEmployees += "\t- " + staffMember.getName() + "\n";
+		}
+		
+		return allEmployees;
 	}
 
 	public void createVolunteer(String string, String string2, String string3) {
