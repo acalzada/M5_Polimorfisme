@@ -9,7 +9,7 @@ public class PaymentFactory {
 	 * 
 	 * Boss employees are paid their monthly salary with 50% increase.
 	 * 
-	 * @return IPaymentRate	Returns the interface for the pay method.
+	 * @return IPaymentRate	Returns the interface for the pay method for Boss employees.
 	 */
 	public static IPaymentRate createPaymentRateBoss(){
 		return new IPaymentRate() {	
@@ -27,7 +27,7 @@ public class PaymentFactory {
 	 * 
 	 * Regular employees are paid their monthly salary reduced by 15%.
 	 * 
-	 * @return IPaymentRate	Returns the interface for the pay method.
+	 * @return IPaymentRate	Returns the interface for the pay method for regular Employees.
 	 */
 	public static IPaymentRate createPaymentRateEmployee(){
 		return new IPaymentRate() {
@@ -40,6 +40,13 @@ public class PaymentFactory {
 	}
 	
 	
+	/**
+	 * Creates the pay function for Manager employees.
+	 * 
+	 * Manager employees are paid their monthly salary incremented by 10%.
+	 * 
+	 * @return IPaymentRate	Returns the interface for the pay method for Managers.
+	 */
 	public static IPaymentRate createPaymentRateManager(){
 		return new IPaymentRate() {
 			@Override
