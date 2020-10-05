@@ -6,8 +6,16 @@ import com.jobs.domain.Manager;
 import com.jobs.domain.Volunteer;
 import com.jobs.persistence.EmployeeRepository;
 
+/**
+ * Class in charge of creating the employee registry and the implementing the different employee
+ * constructor methods with the proper pay() method using the PaymentFactory class. 
+ * 
+ * @author angel
+ *
+ */
 public class JobsController {
-
+	
+	// Registry of employees.
 	private EmployeeRepository repository = new EmployeeRepository();
 	
 	public JobsController(){
@@ -31,6 +39,13 @@ public class JobsController {
 	}
 
 
+	/**
+	 * Method for paying all the employees in the registry.
+	 * 
+	 * Uses the pay() method for each employee type and prints on system output 
+	 * the total accumulated paid amount for each employee.
+	 * 
+	 */
 	public void payAllEmployeers() {
 		
 		System.out.println("PAYING ALL THE EMPLOYEES:\n");
@@ -44,6 +59,11 @@ public class JobsController {
 		System.out.println("\n");
 	}
 
+	/**
+	 * Method for retrieving a list of all the employee names in the registry.
+	 * 
+	 * @return allEmployees	String with each employee name in a single row.
+	 */
 	public String getAllEmployees() {
 		
 		String allEmployees = "\n";

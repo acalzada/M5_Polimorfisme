@@ -2,6 +2,13 @@ package com.jobs.application;
 
 import com.jobs.domain.IPaymentRate;
 
+/**
+ * Class for implementing the IPaymentRate interface methods. It is called by JobsController object 
+ * when creating the different employees.
+ * 
+ * @author angel
+ *
+ */
 public class PaymentFactory {
 
 	/**

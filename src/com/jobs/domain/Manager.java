@@ -1,5 +1,12 @@
 package com.jobs.domain;
 
+/**
+ * 
+ * Class for manager level employees.
+ * 
+ * @author angel
+ *
+ */
 public class Manager extends AbsStaffMember {
 
 	protected double salaryPerMonth;
